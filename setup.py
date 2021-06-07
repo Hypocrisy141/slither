@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="slither-analyzer",
     description="Slither is a Solidity static analysis framework written in Python 3.",
-    url="https://github.com/Hypocrisy141/slither",
+    url="https://github.com/crytic/slither",
     author="Trail of Bits",
     version="0.8.0",
     packages=find_packages(),
