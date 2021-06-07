@@ -1,7 +1,7 @@
 from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
-class Integer_overflow(AbstractDetector):
+class IntegerOverflow(AbstractDetector):
     """
     Detect Integer_overflow
     """
