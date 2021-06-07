@@ -79,7 +79,7 @@ from .statements.unary import IncorrectUnaryExpressionDetection
 from .operations.missing_zero_address_validation import MissingZeroAddressValidation
 from .functions.dead_code import DeadCode
 from .statements.write_after_write import WriteAfterWrite
-from .operations.integer_overflow import Integer_overflow
+from .operations.integer_overflow import IntegerOverflow
 
 #
 #
