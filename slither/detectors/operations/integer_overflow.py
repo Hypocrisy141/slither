@@ -6,7 +6,7 @@ class IntegerOverflow(AbstractDetector):
     Detect Integer_overflow
     """
 
-    ARGUMENT = "integer_overflow"  # slither will launch the detector with slither.py --mydetector
+    ARGUMENT = "integer-overflow"  # slither will launch the detector with slither.py --mydetector
     HELP = "integer_overflow (detector example)"
     IMPACT = DetectorClassification.HIGH
     CONFIDENCE = DetectorClassification.HIGH
