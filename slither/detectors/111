@@ -1,0 +1,39 @@
+from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+
+
+class Skeleton(AbstractDetector):
+    """
+    Detect IntegerOverflow
+    """
+
+    ARGUMENT = 'IntegerOverflow'
+    HELP = 'IntegerOverflow'
+    IMPACT = DetectorClassification.HIGH
+    CONFIDENCE = DetectorClassification.HIGH
+
+    WIKI = ''
+
+    WIKI_TITLE = ''
+    WIKI_DESCRIPTION = ''
+    WIKI_EXPLOIT_SCENARIO = ''
+    WIKI_RECOMMENDATION = ''
+
+    def _detect(self):
+        results = []
+        for contract in self.slither.contracts_derived:
+          for tmp in contract.functions:
+            if 'import "./safemath.sol"' not in tmp.data:
+              if '+' in tmp.data or '-' in tmp.data or '*' in tmp.data:
+                info = ["IntegerOverflow"]
+                res = self.generate_result(info)
+                result.append(res)
+            if 'import "./safemath.sol"' in tmp.data:
+              if "using SafeMath for uint" not in tmp.data or "using SafeMath for uint256" not in tmp.data:
+                info = ["IntegerOverflow"]
+                res = self.generate_result(info)
+                result.append(res)
+              if '+' in tmp.data or '-' in tmp.data or '*' in tmp.data:
+                info = ["IntegerOverflow"]
+                res = self.generate_result(info)
+                result.append(res)
+        return result
